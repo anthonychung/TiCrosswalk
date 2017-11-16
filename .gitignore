@@ -7,3 +7,5 @@ android/dist/*.jar
 .apt_generated
 .classpath
 build.properties
+*.sh
+private
