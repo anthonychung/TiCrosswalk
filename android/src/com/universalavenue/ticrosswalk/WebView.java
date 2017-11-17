@@ -42,6 +42,8 @@ import android.net.Uri;
 import org.xwalk.core.XWalkView;
 import org.xwalk.core.XWalkNavigationHistory.Direction;
 
+
+
 public class WebView extends TiUIView implements OnLifecycleEvent
 {
 	// Standard Debugging variables
@@ -52,6 +54,7 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 	private static final String PROPERTY_HTML = "html";
 
 	private WebViewResourceClient resourceClient;
+	private WebViewUIClient uiClient;
 	private WebViewBinding binding;
 
 	public WebView(WebViewProxy proxy)
@@ -72,6 +75,11 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 		resourceClient = new WebViewResourceClient(view, proxy, binding);
 
 		view.setResourceClient(resourceClient);
+
+
+		uiClient = new WebViewUIClient(view, proxy);
+		view.setUIClient(uiClient);
+
 		view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		view.setFocusableInTouchMode(false);
 
@@ -79,6 +87,8 @@ public class WebView extends TiUIView implements OnLifecycleEvent
 		// for your view to be rendered correctly.
 		setNativeView(view);
 	}
+
+	
 
 
 	// The view is automatically registered as a model listener when the view

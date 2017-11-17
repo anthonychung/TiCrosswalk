@@ -54,6 +54,8 @@ public class WebViewProxy extends TiViewProxy
 
 	protected static final int MSG_LAST_ID = MSG_FIRST_ID + 999;
 
+	private boolean overrideBackKey = false; // used to finish activity instead of going back through nav history
+
 	private LinkedList<Object[]> evalAsyncCallQueue;
 
 	public WebViewProxy() {
@@ -196,6 +198,16 @@ public class WebViewProxy extends TiViewProxy
 	@Kroll.setProperty @Kroll.method
 	public void setHtml(String html) {
 		setPropertyAndFire("html", html);
+	}
+
+	@Kroll.setProperty @Kroll.method
+	public void setOverrideBackKey(Boolean setting) {
+		overrideBackKey = setting;
+	}
+
+	@Kroll.getProperty @Kroll.method
+	public boolean getOverrideBackKey() {
+		return overrideBackKey;
 	}
 
 	@Kroll.method

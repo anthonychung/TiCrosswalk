@@ -52,11 +52,29 @@ The iOS version of this module simply extends the existing Titanium WebView, mea
 
 See [issue #6](https://github.com/UniversalAvenue/TiCrosswalk/issues/6) for details.
 
+---
+
+# New Additions 
+- Date: 20171117
+
+## Android Alert Dialog support
+- implemented Crosswalk support for Alert dialogs in WebViewUIClient.java.
+
+## Android Override back key behaviour
+- Crosswalk will by default navigate back through navigation history when the Android back button is clicked.
+- To override this behaviour and finish the Crosswalk activity when back is clicked, set the following setting.
+
+```
+webView.setOverrideBackKey(true);
+```
+
+---
 
 ## Contributors
 
 **Jonatan Lundin**  
 Twitter: @mr_lundis  
+**Anthony Chung**
 
 ## License
 

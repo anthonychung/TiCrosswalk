@@ -18,7 +18,9 @@ import org.appcelerator.kroll.common.TiConfig;
 import org.xwalk.core.XWalkPreferences;
 import org.chromium.base.CommandLine;
 
+// , propertyAccessors = {"backButtonDestroys"}
 @Kroll.module(name="TiCrosswalk", id="com.universalavenue.ticrosswalk")
+
 public class TiCrosswalkModule extends KrollModule
 {
 
@@ -44,12 +46,11 @@ public class TiCrosswalkModule extends KrollModule
 			CommandLine.getInstance().appendSwitch("--disable-pull-to-refresh-effect");
 		}
 
-		XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
+		XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, false);
 		XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
 		XWalkPreferences.setValue(XWalkPreferences.ALLOW_UNIVERSAL_ACCESS_FROM_FILE, true);
-		XWalkPreferences.setValue(XWalkPreferences.JAVASCRIPT_CAN_OPEN_WINDOW, false);
-		XWalkPreferences.setValue(XWalkPreferences.SUPPORT_MULTIPLE_WINDOWS, false);
+		XWalkPreferences.setValue(XWalkPreferences.JAVASCRIPT_CAN_OPEN_WINDOW, true);
+		XWalkPreferences.setValue(XWalkPreferences.SUPPORT_MULTIPLE_WINDOWS, true);
 	}
-
 }
 
