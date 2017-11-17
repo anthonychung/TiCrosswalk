@@ -2,10 +2,10 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.4.0
+version: 2.0.0
 apiversion: 3
 description: TiCrosswalk
-author: Jonatan Lundin
+author: Jonatan Lundin/Anthony Chung
 license: Specify your license
 copyright: Copyright (c) 2015 by Universal Avenue AB
 
