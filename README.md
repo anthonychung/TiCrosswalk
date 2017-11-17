@@ -67,7 +67,7 @@ See [issue #6](https://github.com/UniversalAvenue/TiCrosswalk/issues/6) for deta
 ```
 webView.setOverrideBackKey(true);
 ```
-
+- note to compile native Android module, the xwalk_core_library folder needs to be renamed the libs folder.
 ---
 
 ## Contributors
